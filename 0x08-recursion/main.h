@@ -8,6 +8,7 @@
  * for all of the functions for project 0x08. C - Recursion.
  */
 
+void _print_rev_recursion(char *s);
 int _putchar(char c);
 void _puts_recursion(char *s);
 int _strlen_recursion(char *s);
