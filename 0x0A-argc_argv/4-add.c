@@ -1,12 +1,12 @@
-# include "main.h"
+#include "main.h"
 
 /**
- * main - program to add positive numbers
+ * main - program that adds positive numbers.
  * @argc: count of arguments
  * @argv: array of arguments
  *
- * return: if no number is passed 0, if a symbol is present
- * print error and return 1
+ * Return: if no number is passed 0, if a symbols in present
+ * print error and return 1.
  */
 int main(int argc, char *argv[])
 {
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		for (j = 1; j < argc; j++)
+		for (j = 0; argv[i][j]; j++)
 		{
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 			return (1);
 			}
 		}
-		sum + atoi(argv[i]);
+		sum += atoi(argv[i]);
 	}
 		printf("%d\n", sum);
 		return (0);
