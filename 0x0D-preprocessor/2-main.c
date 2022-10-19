@@ -1,11 +1,11 @@
-#include <stdio.h>
+#include <stddef.h>
 #include <stdio.h>
 
 /**
- * main - program prints name of file it was compiled from
- * followed by new line
- * 
- * return: 0
+ * main - Program that prints the name of the file it was compiled
+ * from, followed by a new line.
+ *
+ * Return: 0
  */
 int main(void)
 {
