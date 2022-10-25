@@ -50,6 +50,7 @@ void rev_string(char *s);
 void puts2(char *str);
 void puts_half(char *str);
 void print_array(int *a, int n);
+int **alloc_grid(int width, int height);
 int mul(int a, int b);
 void print_numbers(void);
 void print_most_numbers(void);
