@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_dnodeint_end - adds new node to end of dll
+ * add_dnodeint_end - add new node to end of dll
  * @head: pointer to first node in dll
  * @n: int n of node to be added to dll
  * Return: add of new node or NULL on fail

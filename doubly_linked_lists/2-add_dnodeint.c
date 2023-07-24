@@ -1,19 +1,30 @@
 #include "lists.h"
 
 /**
- * dlistint_len - function that counts num of nodes in dll
- * @h: pointer to first node in dll
- * Return: number of nodes in dll
+ * add_dnodeint - adds new node to beginning of dll
+ * @head: pointer to first node in dll
+ * @n: int n of node to be added to dll
+ * Return: add of new node or NULL on fail
  */
-size_t dlistint_len(const dlistint_t *h)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	size_t numNodes = 0;
+	dlistint_t *newNode;
 
-	/* adds to node count, then targets next node */
-	while (h)
+	/* alloc mem for newNode and check for oopsy */
+	newNode = malloc(sizeof(dlistint_t));
+	if (!(newNode))
 	{
-		numNodes++;
-		h = h->next;
+		return (NULL);
 	}
-	return (numNodes);
+	/* fill newNode struct members */
+	newNode->n = n;
+	newNode->prev = NULL;
+	newNode->next = *head;
+	/* put at beginning of dll */
+	if (*head)
+	{
+		(*head)->prev = newNode;
+	}
+	*head = newNode;
+	return (newNode);
 }
