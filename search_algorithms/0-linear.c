@@ -23,5 +23,5 @@ for (i = 0; i < size; i++)
             return (int)i;
     }
 
-    return -1; // Value not found
+    return -1; /** Value not found */
 }
