@@ -1,30 +1,55 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "search_algos.h"
 
 /**
- * binary_search - Search for a value in a sorted array using binary search.
- * @array: Pointer to the first element of the array.
- * @size: Number of elements in the array.
- * @value: Value to search for.
- *
- * Return: Index of 'value' in 'array', or -1 if not found.
+ * arrayPrinter - prints an array
+ * @start: start of array
+ * @end: end of array
+ * @array: pointer to the array
  */
+
+
+void arrayPrinter(int *array, int start, int end)
+{
+	int i;
+
+	printf("Searching in array: ");
+	for (i = start; i < end; i++)
+		printf("%d, ", array[i]);
+	printf("%d\n", array[end]);
+}
+
+/**
+ * binary_search - search in binary
+ * @array: the array
+ * @size: size of array
+ * @value: what it needs to find
+ * Return: index of location or -1 if not present
+ */
+
 int binary_search(int *array, size_t size, int value)
 {
-    if (array == NULL)
-        return -1;
+	int mid, left, right, RETURN_VALUE = -1;
+	int *temp = array;
 
-    int left = 0;
-    int right = (int)size - 1;
-
-    while (left <= right)
-    {
-        int mid = left + (right - left) / 2;
-
-        printf("Searching in array: ");
-        for (int i = left; i <= right; i++)
-        {
-            if (i > left)
-                printf(", ");
-            printf("%d",
+	if (array)
+	{
+		left = 0, right = ((int)size - 1);
+		arrayPrinter(temp, left, right);
+		while (left <= right)
+		{
+			mid = (left + right) / 2;
+			if (value == temp[mid])
+				{
+				RETURN_VALUE = mid;
+				break;
+				}
+			if (value > temp[mid])
+				left = mid + 1;
+			if (value < temp[mid])
+				right = mid - 1;
+			if (left <= right)
+				arrayPrinter(temp, left, right);
+		}
+	}
+	return (RETURN_VALUE);
+}
