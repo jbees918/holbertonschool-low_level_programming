@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * insert_dnodeint_at_index - inserts  
+ * insert_dnodeint_at_index - inserts
  *  new node at given position
  *
  * @h: head of list
